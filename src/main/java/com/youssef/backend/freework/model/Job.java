@@ -1,18 +1,17 @@
 package com.youssef.backend.freework.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 @Data
 @Component
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Job {
-    @JsonProperty("@id")
-    private String id;
-    @JsonProperty("@type")
-    private String type;
     private String name;
-    private String slug;
     private String nameForContribution;
-    private String nameForContributionSlug;
 }
